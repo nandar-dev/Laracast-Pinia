@@ -43,6 +43,7 @@ export default {
   props: {
     show: Boolean,
   },
+  emits: ['closemodal'],
   data() {
     return {
       email: "",
@@ -51,6 +52,7 @@ export default {
   methods: {
     submitNewMember() {
       useTeamStore().addNewMember(this.email);
+      this.$emit('closemodal')
     },
   },
 };
